@@ -3,7 +3,7 @@ package junit;
 import org.junit.*;
 
 public class JunitExampleTest{
-
+    
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Before class");
@@ -22,7 +22,7 @@ public class JunitExampleTest{
             e.printStackTrace();
         }
     }
-
+    
     @Test(expected = NullPointerException.class)
     public void test1() {
         System.out.println("Test 1");
@@ -34,7 +34,7 @@ public class JunitExampleTest{
         throw new NullPointerException();
     }
 
-    @Test(timeout = 2)
+    @Test(timeout = 2000)
     public void test2() {
         System.out.println("Test 2");
         try {

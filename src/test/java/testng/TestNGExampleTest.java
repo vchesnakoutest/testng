@@ -28,20 +28,10 @@ public class TestNGExampleTest {
     public void beforeMethod() {
         System.out.println("Before Method");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    @Test
-    public void dependsOn() {
-        throw new NullPointerException();
-    }
-    
-    @Test(alwaysRun = false, dependsOnMethods = {"dependsOn"})
-    public void test1() {
-        
     }
 
     @Test(description = "description", enabled = false, timeOut = 2)
@@ -49,37 +39,32 @@ public class TestNGExampleTest {
 
     }
 
-    @Test(description = "description", enabled = false, timeOut = 2, groups = {"test", "slow"})
+    @Test(description = "description", enabled = false, timeOut = 2, groups = {"Писал Юра", "slow"})
     public void test3() {
 
     }
 
-    @Parameters({"param1", "param2"})
+    @Parameters({"email", "password"})
     @Test(groups = {"slow"})
-    public void test4(@Optional("1") int p1, @Optional("string") String p2) {
+    public void test4(@Optional("1") 
+                                  String p1, 
+                      @Optional("string") 
+                              String p2) {
         System.out.println(p1 + " " + p2);
     }
 
-    @Test(dataProvider="getData")
-    public void test5(int p1, String p2) {
-        System.out.println("Instance DataProvider Example: Data(" + p1 + ", " + p2 + ")");
+    @Test(dataProvider="asd")
+    public void test5(String email, String password, boolean validLogin) {
+        System.out.println("Instance DataProvider Example: Data(" + email + ", " + password + " " +validLogin +")");
     }
-
     @DataProvider
-    public Object[][] getData() {
-        return new Object[][]{{5, "five"}, {6, "six"}, {7, "seven"}};
+    public Object[][] asd() {
+        return new Object[][]{
+                {"email1@mailinator.com", "password01", true},
+                {"email2@mailinator.com", "password01", false},
+                {"email3@mailinator.com", "password01", false}
+        };
     }
-
-    @Test(invocationCount = 10, threadPoolSize = 5)
-    public void test6() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Lots of attempts");
-    }
-
     @AfterClass
     public void afterClass() {
         System.out.println("After class");
