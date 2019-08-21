@@ -1,3 +1,5 @@
+package junit;
+
 import org.junit.*;
 
 public class JunitExampleTest{

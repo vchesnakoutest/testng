@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="Test suite" parallel="tests">
+    <test name="suite 1">
+        <groups>
+            <run>
+                <include name="slow" />
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.TestNGExampleTest"/>
+            <parameter name="param2" value="and a string parameter"></parameter>
+            <parameter name="param1" value="2"></parameter>
+        </classes>
+    </test> <!-- Test -->
+</suite>
