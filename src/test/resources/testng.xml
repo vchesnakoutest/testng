@@ -2,12 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" name="Test suite" parallel="tests">
     <test name="test 1">
-        <groups>
+<!--        <groups>
             <run>
                 <include name="Писал Юра" />
-                <exclude name="slow"></exclude>
             </run>
-        </groups>
+        </groups>-->
         <classes>
             <class name="testng.TestNGExampleTest"/>
             <parameter name="password" value="password"></parameter>

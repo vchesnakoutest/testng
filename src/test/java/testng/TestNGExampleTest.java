@@ -4,7 +4,7 @@ import org.testng.annotations.*;
 
 public class TestNGExampleTest {
     
-    @BeforeClass
+    @BeforeClass (groups = {"Писал Юра", "slow"})
     public void beforeClass() {
         System.out.println("Before class");
         try {
@@ -14,7 +14,7 @@ public class TestNGExampleTest {
         }
     }
     
-    @BeforeTest
+    @BeforeTest (groups = {"Писал Юра", "slow"})
     public void beforeTest() {
         System.out.println("Before Test");
         try {
@@ -24,7 +24,7 @@ public class TestNGExampleTest {
         }
     }
     
-    @BeforeMethod
+    @BeforeMethod (groups = {"Писал Юра", "slow"})
     public void beforeMethod() {
         System.out.println("Before Method");
         try {
@@ -34,7 +34,7 @@ public class TestNGExampleTest {
         }
     }
 
-    @Test(description = "description", enabled = false, timeOut = 2)
+    @Test(description = "description", enabled = false, timeOut = 2, groups = {"Писал Юра", "slow"})
     public void test2() {
 
     }
@@ -55,7 +55,8 @@ public class TestNGExampleTest {
 
     @Test(dataProvider="asd")
     public void test5(String email, String password, boolean validLogin) {
-        System.out.println("Instance DataProvider Example: Data(" + email + ", " + password + " " +validLogin +")");
+        System.out.println("Instance DataProvider Example: Data(" + email + ", " + password + " " + validLogin +")");
+
     }
     @DataProvider
     public Object[][] asd() {
