@@ -25,8 +25,8 @@ public class BaseTest {
         System.out.println("BEFORE CLASS BASE");
     }
 
-    @BeforeClass
-    public void beforeNethod() {
+    @BeforeMethod
+    public void beforeMethod() {
         System.out.println("BEFORE METHOD BASE");
     }
 }
