@@ -14,10 +14,10 @@ public class TestNGExampleTest3 {
         throw new NullPointerException();
     }
 
-    @Test(alwaysRun = true, dependsOnMethods = {"dependsOn", "anotherMethod"})
+    @Test(alwaysRun = true, dependsOnMethods = {"dependsOn", "anotherMethod"}, priority = 2)
     public void test1() {
         try {
-            Thread.sleep(30000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

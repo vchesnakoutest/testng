@@ -8,7 +8,7 @@ public class TestNGExampleTest {
     public void beforeClass() {
         System.out.println("Before class");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -18,7 +18,7 @@ public class TestNGExampleTest {
     public void beforeTest() {
         System.out.println("Before Test");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -28,13 +28,13 @@ public class TestNGExampleTest {
     public void beforeMethod() {
         System.out.println("Before Method");
         try {
-            Thread.sleep(10000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    @Test(description = "description", enabled = false, timeOut = 2, groups = {"Писал Юра", "slow"})
+    @Test(retryAnalyzer = Retry.class, description = "description", enabled = false, timeOut = 2, groups = {"Писал Юра", "slow"})
     public void test2() {
 
     }
@@ -46,9 +46,9 @@ public class TestNGExampleTest {
 
     @Parameters({"email", "password"})
     @Test(groups = {"slow"})
-    public void test4(@Optional("1") 
-                                  String p1, 
-                      @Optional("string") 
+    public void test4(@Optional("1")
+                                  String p1,
+                      @Optional("string")
                               String p2) {
         System.out.println(p1 + " " + p2);
     }
@@ -66,11 +66,12 @@ public class TestNGExampleTest {
                 {"email3@mailinator.com", "password01", false}
         };
     }
+
     @AfterClass
     public void afterClass() {
         System.out.println("After class");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -80,7 +81,7 @@ public class TestNGExampleTest {
     public void afterTest() {
         System.out.println("After test");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -90,7 +91,7 @@ public class TestNGExampleTest {
     public void afterMethod() {
         System.out.println("After method");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -100,7 +101,7 @@ public class TestNGExampleTest {
     public void beforeSuite() {
         System.out.println("Before suite");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -110,7 +111,7 @@ public class TestNGExampleTest {
     public void afterSuite() {
         System.out.println("After suite");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -120,7 +121,7 @@ public class TestNGExampleTest {
     public void beforeGroups() {
         System.out.println("Before groups");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -130,7 +131,7 @@ public class TestNGExampleTest {
     public void afterGroups() {
         System.out.println("After groups");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
