@@ -1,10 +1,8 @@
 package testng;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
+@Listeners(TestListener.class)
 public class BaseTest {
 
     @BeforeSuite
