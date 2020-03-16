@@ -5,7 +5,7 @@ import org.junit.*;
 public class JunitBaseTest {
     
     @BeforeClass
-    public static void beforeClass() {
+    public static void t1() {
         System.out.println("Before class Base");
         try {
             Thread.sleep(1000);
@@ -14,7 +14,7 @@ public class JunitBaseTest {
         }
     }
     @Before
-    public void beforeMethod() {
+    public void t2() {
         System.out.println("Before test Base");
         try {
             Thread.sleep(1000);
@@ -24,7 +24,7 @@ public class JunitBaseTest {
     }
 
     @After
-    public void afterMethod() {
+    public void t3() {
         System.out.println("After test Base");
         try {
             Thread.sleep(1000);
@@ -34,7 +34,7 @@ public class JunitBaseTest {
     }
 
     @AfterClass
-    public static void afterClass() {
+    public static void t4() {
         System.out.println("After class Base");
         try {
             Thread.sleep(1000);
