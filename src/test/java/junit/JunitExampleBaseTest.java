@@ -2,8 +2,20 @@ package junit;
 
 import org.junit.*;
 
-public class JunitExampleBaseTest extends JunitBaseTest{
-    
+
+/**
+ * BEFORE CLASS ИЗ РОДИТЕЛЯ
+ * BEFORECLASS ИЗ НАСЛЕДНИКА
+ * BEFORE ИЗ РОДИТЕЛЯ
+ * BEFORE ИЗ НАСЛЕДНИКА
+ * METHOD
+ * AFTER ИЗ НАСЛЕДНИКА
+ * AFTER из РОДИТЕЛЯ
+ * AFTERCLASS ИЗ НАСЛЕДНИКА
+ * AFTER CLASS ИЗ РОДИТЕЛЯ
+ */
+public class JunitExampleBaseTest extends JunitBaseTest {
+
     @Test(expected = NullPointerException.class)
     public void test1() {
         System.out.println("Test 1");
@@ -15,7 +27,7 @@ public class JunitExampleBaseTest extends JunitBaseTest{
         throw new NullPointerException();
     }
 
-    @Test(timeout = 2)
+    @Test(timeout = 2000)
     public void test2() {
         System.out.println("Test 2");
         try {
