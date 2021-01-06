@@ -45,7 +45,7 @@ public class TestngTest extends BaseTest {
         } else if (number % 5 == 0) {
             return "Art";
         } else {
-            return "Говно, переделывай";
+            return "Переделывай";
         }
     }
 
@@ -58,10 +58,10 @@ public class TestngTest extends BaseTest {
                 {6, "iTech"},
                 {10, "Art"},
                 {30, "iTechArt"},
-                {1, "Говно, переделывай"},
-                {-1, "Говно, переделывай"},
+                {1, "Переделывай"},
+                {-1, "Переделывай"},
                 {1000000000, "Art"},
-                {3.3, "Говно, переделывай"}
+                {3.3, "Переделывай"}
         };
     }
 
@@ -79,7 +79,7 @@ public class TestngTest extends BaseTest {
         } else if (number == 5) {
             return "Art";
         } else {
-            return "Говно, переделывай";
+            return "Переделывай";
         }
     }
 }
